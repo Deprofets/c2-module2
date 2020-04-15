@@ -7,9 +7,7 @@ $sample = [
 
 def rgb_detector data
     data.flatten(1).map do |pixel| 
-        red = pixel[0]
-        green = pixel[1]
-        blue = pixel[2]
+        red, green, blue = pixel
         red > 100 and green < red/4 and blue < red/4
     end
     .count(true)
